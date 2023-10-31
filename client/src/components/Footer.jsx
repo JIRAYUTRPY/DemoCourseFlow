@@ -12,20 +12,29 @@ function Footer() {
         <Link to="/">
           <img className="cursor-pointer" src={logo}></img>
         </Link>
-        <div className="flex gap-28">
+        <div className="flex flex-row gap-28">
           <Link to="/course">
             <p className="text-white cursor-pointer">All course</p>
+          </Link>
+          <Link to="/dev">
+            <p className="text-white cursor-pointer">our developer team</p>
           </Link>
         </div>
         <div className="flex gap-[10px]">
           <div className="cursor-pointer">
-            <a href="https://www.facebook.com/" target="_blank"><img src={facebookLogo}/></a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src={facebookLogo} />
+            </a>
           </div>
           <div className="cursor-pointer">
-          <a href="https://www.instagram.com/"target="_blank"><img src={igLogo}/></a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src={igLogo} />
+            </a>
           </div>
           <div className="cursor-pointer">
-          <a href="https://twitter.com/"target="_blank"><img src={twLogo}/></a>
+            <a href="https://twitter.com/" target="_blank">
+              <img src={twLogo} />
+            </a>
           </div>
         </div>
       </div>
