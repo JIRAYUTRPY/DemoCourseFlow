@@ -96,7 +96,7 @@ function LessonForm() {
       });
 
       const posting = await axios.post(
-        `http://localhost:4001/admin/add/lesson/${params.courseId}`,
+        `https://courseflow.hop.sh/admin/add/lesson/${params.courseId}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

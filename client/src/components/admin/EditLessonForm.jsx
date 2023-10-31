@@ -65,7 +65,7 @@ function EditLessonForm() {
   const handleSubmit = async (values) => {
     setLoading(true);
     const fetching = await axios.put(
-      `http://localhost:4001/admin/updated/lesson/${params.courseId}/${lessons[editIndex].lesson_id}`,
+      `https://courseflow.hop.sh/updated/lesson/${params.courseId}/${lessons[editIndex].lesson_id}`,
       {
         lesson_name: values.lessonName,
       }
@@ -103,7 +103,7 @@ function EditLessonForm() {
       if (editIndexStatus[index].file) {
         formData.append("singleSubLessonVideo", editIndexStatus[index].file);
         const fetching = await axios.post(
-          `http://localhost:4001/admin/created/sublesson/${params.courseId}/${lessons[editIndex].lesson_id}`,
+          `https://courseflow.hop.sh/admin/created/sublesson/${params.courseId}/${lessons[editIndex].lesson_id}`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -126,7 +126,7 @@ function EditLessonForm() {
       if (editIndexStatus[index].file) {
         formData.append("singleSubLessonVideo", editIndexStatus[index].file);
         const fetching = await axios.put(
-          `http://localhost:4001/admin/updated/sublesson/${params.courseId}/${lessons[editIndex].lesson_id}/${editIndexStatus[index].sub_lesson_id}`,
+          `https://courseflow.hop.sh/admin/updated/sublesson/${params.courseId}/${lessons[editIndex].lesson_id}/${editIndexStatus[index].sub_lesson_id}`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -140,7 +140,7 @@ function EditLessonForm() {
           editIndexStatus[index].sub_lesson_name
         );
         const fetching = await axios.put(
-          `http://localhost:4001/admin/updated/sublesson/${params.courseId}/${lessons[editIndex].lesson_id}/${editIndexStatus[index].sub_lesson_id}`,
+          `https://courseflow.hop.sh/admin/updated/sublesson/${params.courseId}/${lessons[editIndex].lesson_id}/${editIndexStatus[index].sub_lesson_id}`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -156,7 +156,7 @@ function EditLessonForm() {
       setLoadingIndex(null);
       setEditIndexStatus(newState);
       const fetching = await axios.delete(
-        `http://localhost:4001/admin/sublessons/${editIndexStatus[index].sub_lesson_id}`
+        `https://courseflow.hop.sh/admin/sublessons/${editIndexStatus[index].sub_lesson_id}`
       );
       return;
     }

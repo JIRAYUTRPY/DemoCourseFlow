@@ -16,7 +16,7 @@ function CourseForm({ filterSubmit }) {
       formValues.public_status = 1;
     }
     const result = await axios.put(
-      `http://localhost:4001/admin/public/${params.courseId}`,
+      `https://courseflow.hop.sh/admin/public/${params.courseId}`,
       { publicStatus: formValues.public_status }
     );
     console.log(result);

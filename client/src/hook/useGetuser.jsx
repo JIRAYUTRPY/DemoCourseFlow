@@ -17,7 +17,7 @@ const useGetuser = () => {
         setIsError(false);
         setIsLoading(true);
         const userDataFromServer = await axios.get(
-          `http://localhost:4001/users/${id}`
+          `https://courseflow.hop.sh/users/${id}`
         );
         setUser(userDataFromServer.data.data[0]);
       } else {
@@ -55,11 +55,13 @@ const useGetuser = () => {
       }
       // console.log(newData);
       const axiosResult = await axios.put(
-        `http://localhost:4001/users/${id}`,
+        `https://courseflow.hop.sh/users/${id}`,
         newData
       );
       if (axiosResult.data.message == "Update users successfully") {
-        const fetching = await axios.get(`http://localhost:4001/users/${id}`);
+        const fetching = await axios.get(
+          `https://courseflow.hop.sh/users/${id}`
+        );
         const userDataFromToken = jwtDecode(fetching.data.token);
         auth.session.user = userDataFromToken;
 

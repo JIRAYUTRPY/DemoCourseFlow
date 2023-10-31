@@ -14,7 +14,7 @@ const useAssignmentHook = () => {
   const getCourseList = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:4001/admin/assignment/getcourse"
+        "https://courseflow.hop.sh/admin/assignment/getcourse"
       );
       return res.data.data;
     } catch (error) {
@@ -28,7 +28,7 @@ const useAssignmentHook = () => {
       });
       try {
         const res = await axios.get(
-          `http://localhost:4001/admin/assignment/getlesson/${course_id[0].course_id}`
+          `https://courseflow.hop.sh/admin/assignment/getlesson/${course_id[0].course_id}`
         );
         return res.data.data;
       } catch (error) {
@@ -46,7 +46,7 @@ const useAssignmentHook = () => {
       });
       try {
         const res = await axios.get(
-          `http://localhost:4001/admin/assignment/getsublesson/${lesson_id[0].lesson_id}`
+          `https://courseflow.hop.sh/admin/assignment/getsublesson/${lesson_id[0].lesson_id}`
         );
         return res.data.data;
       } catch (error) {

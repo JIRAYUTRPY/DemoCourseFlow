@@ -13,7 +13,7 @@ function EditAssignmentForm({ assignmentDetail }) {
   const handdleSubmit = async (event) => {
     try {
       await axios.put(
-        `http://localhost:4001/admin/updateassignment/${assignmentDetail.assignment_id}`,
+        `https://courseflow.hop.sh/admin/updateassignment/${assignmentDetail.assignment_id}`,
         {
           assignment_duration: assignmentDetail.assignment_duration,
           assignment_detail: assignmentDetail.assignment_detail,

@@ -18,7 +18,7 @@ function AuthProvider(props) {
     session.error = null;
     try {
       const results = await axios.post(
-        "http://localhost:4001/auth/login",
+        "https://courseflow.hop.sh/auth/login",
         data
       );
       if (!results.data.token) {
@@ -49,7 +49,7 @@ function AuthProvider(props) {
     session.error = null;
     try {
       const results = await axios.post(
-        "http://localhost:4001/auth/admin/login",
+        "https://courseflow.hop.sh/auth/admin/login",
         data
       );
       if (!results.data.token) {
@@ -79,7 +79,7 @@ function AuthProvider(props) {
 
   const register = async (data) => {
     const result = await axios.post(
-      "http://localhost:4001/auth/register",
+      "https://courseflow.hop.sh/auth/register",
       data
     );
     if (result.data.message === "Register Successfully") {

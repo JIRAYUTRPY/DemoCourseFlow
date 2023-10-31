@@ -30,7 +30,7 @@ function AssignmentPage() {
   } = useAssignmentHook();
   const getAssignmet = async () => {
     try {
-      return await axios.get("http://localhost:4001/admin/getassignment");
+      return await axios.get("https://courseflow.hop.sh/admin/getassignment");
     } catch (err) {
       console.log(err);
     }
@@ -38,7 +38,7 @@ function AssignmentPage() {
   const handdleFetchNewPage = async (v) => {
     try {
       return await axios.get(
-        `http://localhost:4001/admin/getassignment?page=${v}`
+        `https://courseflow.hop.sh/admin/getassignment?page=${v}`
       );
     } catch (err) {
       console.log(err);
@@ -46,7 +46,7 @@ function AssignmentPage() {
   };
   const haddleDelteAssginment = async (v) => {
     try {
-      await axios.delete(`http://localhost:4001/admin/assignment/${v}`);
+      await axios.delete(`https://courseflow.hop.sh/admin/assignment/${v}`);
       window.location.reload();
     } catch (err) {
       console.log(err);

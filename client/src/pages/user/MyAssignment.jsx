@@ -53,7 +53,7 @@ function MyAssignmentPage() {
   };
   const updateAnswer = async (index) => {
     const response = await axios.put(
-      `http://localhost:4001/courses/assignment/submit`,
+      `https://courseflow.hop.sh/courses/assignment/submit`,
       {
         user_course_detail_id: inputText[index].id,
         assignment_status: "submit",
@@ -77,7 +77,7 @@ function MyAssignmentPage() {
   };
   const getMyAssignment = async () => {
     return await axios.get(
-      `http://localhost:4001/courses/allassignment/${auth.session.user.user_id}`
+      `https://courseflow.hop.sh/courses/allassignment/${auth.session.user.user_id}`
     );
   };
   useEffect(() => {

@@ -56,7 +56,7 @@ function CourseListPage() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:4001/admin?page=${queryParam.page}&publicStatus=${queryParam.publicStatus}&price=${queryParam.price}&createdat=${queryParam.createdat}&updatedat=${queryParam.updatedat}&title=${queryParam.title}`
+        `https://courseflow.hop.sh/admin?page=${queryParam.page}&publicStatus=${queryParam.publicStatus}&price=${queryParam.price}&createdat=${queryParam.createdat}&updatedat=${queryParam.updatedat}&title=${queryParam.title}`
       );
       setCourseList(response.data.data);
       queryParam.courseCount = response.data.all_course;
@@ -97,7 +97,7 @@ function CourseListPage() {
     console.log("courseId", courseId);
     try {
       const response = await axios.delete(
-        `http://localhost:4001/admin/courses/${courseId}`
+        `https://courseflow.hop.sh/admin/courses/${courseId}`
       );
       // console.log(response);
       if (response && response.status === 200) {

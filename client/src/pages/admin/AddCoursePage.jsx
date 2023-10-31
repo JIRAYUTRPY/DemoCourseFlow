@@ -105,7 +105,7 @@ function AddCoursePage() {
     ///** TOO EASY I DONT USE THAT. ***/
     try {
       const response = await axios.post(
-        "http://localhost:4001/admin/course/created",
+        "https://courseflow.hop.sh/admin/course/created",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

@@ -83,7 +83,7 @@ function EditCoursePage() {
     console.log(courseCoverImgFile);
     try {
       const response = await axios.put(
-        `http://localhost:4001/admin/updated/${params.courseId}`,
+        `https://courseflow.hop.sh/admin/updated/${params.courseId}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -101,7 +101,7 @@ function EditCoursePage() {
     lessons.length = 0;
     try {
       const response = await axios.get(
-        `http://localhost:4001/admin/courses/${params.courseId}`
+        `https://courseflow.hop.sh/admin/courses/${params.courseId}`
       );
       if (lessons.length === 0) {
         lessons.push(...response.data.data.lessons);
@@ -128,7 +128,7 @@ function EditCoursePage() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:4001/admin/courses/${params.courseId}`
+        `https://courseflow.hop.sh/admin/courses/${params.courseId}`
       );
       setLessons(response.data.data.lessons);
     } catch (error) {
@@ -140,7 +140,7 @@ function EditCoursePage() {
     setLoading(true);
     try {
       const response = await axios.delete(
-        `http://localhost:4001/admin/lessons/${lessonId}/${params.courseId}`
+        `https://courseflow.hop.sh/admin/lessons/${lessonId}/${params.courseId}`
       );
       console.log(response.data.message);
     } catch (error) {
@@ -153,7 +153,7 @@ function EditCoursePage() {
     setLoading(true);
     try {
       const response = await axios.delete(
-        `http://localhost:4001/admin/courses/${params.courseId}`
+        `https://courseflow.hop.sh/admin/courses/${params.courseId}`
       );
       console.log(response.data.message);
     } catch (error) {

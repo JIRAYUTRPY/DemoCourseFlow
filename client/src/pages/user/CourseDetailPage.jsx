@@ -25,7 +25,7 @@ function CourseDetailPage() {
   const getCourse = async () => {
     try {
       const courseResult = await axios.get(
-        `http://localhost:4001/courses/${params.courseId}`
+        `https://courseflow.hop.sh/courses/${params.courseId}`
       );
       setCourse(courseResult.data.data[0]);
       // console.log(courseResult.data.data[0]);
@@ -91,7 +91,7 @@ function CourseDetailPage() {
         course_id: courseId,
       };
       const desireRequest = await axios.post(
-        `http://localhost:4001/courses/mydesirecourses/${params.courseId}`,
+        `https://courseflow.hop.sh/courses/mydesirecourses/${params.courseId}`,
         dataSend
       );
       console.log(desireRequest);
@@ -112,7 +112,7 @@ function CourseDetailPage() {
       // const userId = auth.session.user.user_id;
       const courseId = params.courseId;
       const response = await axios.get(
-        `http://localhost:4001/courses/mydesirecourses/${userId}/${courseId}`
+        `https://courseflow.hop.sh/courses/mydesirecourses/${userId}/${courseId}`
       );
       if (response.data.isDesired.data.length === 0) {
         setIsDesired(false);
@@ -129,7 +129,7 @@ function CourseDetailPage() {
       const userId = auth.session.user.user_id;
       const courseId = params.courseId;
       const response = await axios.delete(
-        `http://localhost:4001/courses/mydesirecourses/${userId}/${courseId}`
+        `https://courseflow.hop.sh/courses/mydesirecourses/${userId}/${courseId}`
       );
       if (response.status === 200) {
         setIsDesired(false);
@@ -147,7 +147,7 @@ function CourseDetailPage() {
       const courseId = params.courseId;
 
       const response = await axios.get(
-        `http://localhost:4001/courses/subscription/${userId}/${courseId}`
+        `https://courseflow.hop.sh/courses/subscription/${userId}/${courseId}`
       );
 
       if (response.data.isSubscribed.data.length === 0) {
@@ -170,7 +170,7 @@ function CourseDetailPage() {
       };
 
       const request = await axios.post(
-        `http://localhost:4001/courses/mycourses/${params.courseId}`,
+        `https://courseflow.hop.sh/courses/mycourses/${params.courseId}`,
         dataToSend
       );
 
